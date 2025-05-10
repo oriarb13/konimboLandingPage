@@ -1,26 +1,196 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* צבעי בסיס - עם הערות להבנת הצבעים */
+  --e-global-color-primary: #203052; /* כחול כהה */
+  --e-global-color-secondary: #31497c; /* כחול בינוני */
+  --e-global-color-text: #ffffff; /* לבן */
+  --e-global-color-accent: #82b841; /* חום בהיר */
+  --e-global-color-0a7c1cd: #162138; /* כחול כהה מאוד */
+  --e-global-color-5bbaaab: #7b88a5; /* כחול-אפור בהיר */
+  --e-global-color-537f6c0: #02010100; /* שקוף */
+  --e-global-color-2091713: #bda798; /* חום בהיר */
+
+  /* גרסאות בהירות יותר של הצבעים ללייט מוד */
+  --light-primary: #3a5a94; /* כחול בהיר יותר */
+  --light-secondary: #5272b8; /* כחול בינוני בהיר */
+  --light-text: #1a1a1a; /* כמעט שחור */
+  --light-accent: #dfc4b0; /* חום בהיר יותר */
+  --light-darker-bg: #e8eef9; /* רקע בהיר עם גוון כחלחל */
+  --light-muted: #a8b2c9; /* כחול-אפור בהיר יותר */
+  --light-accent2: #d7cac1; /* חום בהיר מאוד */
+
+  /* הגדרות טיפוגרפיה */
+  --e-global-typography-primary-font-family: "Roboto";
+  --e-global-typography-primary-font-weight: 600;
+  --e-global-typography-secondary-font-family: "Roboto Slab";
+  --e-global-typography-secondary-font-weight: 400;
+  --e-global-typography-text-font-family: "Roboto";
+  --e-global-typography-text-font-weight: 400;
+  --e-global-typography-accent-font-family: "Roboto";
+  --e-global-typography-accent-font-weight: 500;
+
+  /* הגדרות עיצוב */
+  --radius: 0.625rem;
+
+  /* הגדרות צבעים ללייט מוד */
+  --background: #f5f8ff; /* רקע בהיר עם גוון כחלחל */
+  --foreground: var(--light-text); /* טקסט כהה */
+  --card: #ffffff; /* לבן */
+  --card-foreground: var(--light-text); /* טקסט כהה */
+  --popover: #ffffff; /* לבן */
+  --popover-foreground: var(--light-text); /* טקסט כהה */
+  --primary: var(--light-primary); /* כחול בהיר יותר */
+  --primary-foreground: #ffffff; /* לבן */
+  --secondary: var(--light-secondary); /* כחול בינוני בהיר */
+  --secondary-foreground: #ffffff; /* לבן */
+  --muted: var(--light-darker-bg); /* רקע בהיר עם גוון כחלחל */
+  --muted-foreground: var(--light-muted); /* כחול-אפור בהיר יותר */
+  --accent: var(--light-accent); /* חום בהיר יותר */
+  --accent-foreground: var(--light-primary); /* כחול בהיר יותר */
+  --destructive: #ef4444; /* אדום */
+  --border: #d0d7e8; /* גבול בהיר */
+  --input: #d0d7e8; /* גבול בהיר */
+  --ring: #82b841; /* חום בהיר (accent) */
+
+  /* צבעי תרשימים ללייט מוד */
+  --chart-1: var(--light-primary); /* כחול בהיר יותר */
+  --chart-2: var(--light-secondary); /* כחול בינוני בהיר */
+  --chart-3: var(--light-accent); /* חום בהיר יותר */
+  --chart-4: var(--light-accent2); /* חום בהיר מאוד */
+  --chart-5: var(--light-muted); /* כחול-אפור בהיר יותר */
+
+  /* צבעי סרגל צד ללייט מוד */
+  --sidebar: #ffffff; /* לבן */
+  --sidebar-foreground: var(--light-text); /* טקסט כהה */
+  --sidebar-primary: var(--light-primary); /* כחול בהיר יותר */
+  --sidebar-primary-foreground: #ffffff; /* לבן */
+  --sidebar-accent: var(--light-accent); /* חום בהיר יותר */
+  --sidebar-accent-foreground: var(--light-primary); /* כחול בהיר יותר */
+  --sidebar-border: #d0d7e8; /* גבול בהיר */
+  --sidebar-ring: var(--light-secondary); /* כחול בינוני בהיר */
+
+  /* הגדרות פונט */
+  --font-primary: var(--e-global-typography-primary-font-family);
+  --font-secondary: var(--e-global-typography-secondary-font-family);
+}
+
+.dark {
+  /* צבעי מצב חשוך */
+  --background: #162138; /* כחול כהה מאוד (0a7c1cd) */
+  --foreground: #ffffff; /* לבן (text) */
+  --card: #203052; /* כחול כהה (primary) */
+  --card-foreground: #ffffff; /* לבן (text) */
+  --popover: #203052; /* כחול כהה (primary) */
+  --popover-foreground: #ffffff; /* לבן (text) */
+  --primary: #31497c; /* כחול בינוני (secondary) */
+  --primary-foreground: #ffffff; /* לבן (text) */
+  --secondary: #203052; /* כחול כהה (primary) */
+  --secondary-foreground: #ffffff; /* לבן (text) */
+  --muted: #162138; /* כחול כהה מאוד (0a7c1cd) */
+  --muted-foreground: #7b88a5; /* כחול-אפור בהיר (5bbaaab) */
+  --accent: #bda798; /* חום בהיר (2091713) */
+  --accent-foreground: #ffffff; /* לבן (text) */
+  --destructive: #ef4444; /* אדום */
+  --border: rgba(255, 255, 255, 0.1); /* לבן שקוף */
+  --input: rgba(255, 255, 255, 0.15); /* לבן שקוף */
+  --ring: var(--light-secondary); /* כחול בינוני בהיר */
+
+  /* צבעי תרשימים במצב חשוך */
+  --chart-1: #31497c; /* כחול בינוני (secondary) */
+  --chart-2: #82b841; /* חום בהיר (accent) */
+  --chart-3: #bda798; /* חום בהיר (2091713) */
+  --chart-4: #7b88a5; /* כחול-אפור בהיר (5bbaaab) */
+  --chart-5: #203052; /* כחול כהה (primary) */
+
+  /* צבעי סרגל צד במצב חשוך */
+  --sidebar: #162138; /* כחול כהה מאוד (0a7c1cd) */
+  --sidebar-foreground: #ffffff; /* לבן (text) */
+  --sidebar-primary: #82b841; /* חום בהיר (accent) */
+  --sidebar-primary-foreground: #ffffff; /* לבן (text) */
+  --sidebar-accent: #203052; /* כחול כהה (primary) */
+  --sidebar-accent-foreground: #ffffff; /* לבן (text) */
+  --sidebar-border: rgba(255, 255, 255, 0.1); /* לבן שקוף */
+  --sidebar-ring: #82b841; /* חום בהיר (accent) */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--e-global-typography-text-font-family);
+    font-weight: var(--e-global-typography-text-font-weight);
+    line-height: 1.4em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--e-global-typography-primary-font-family);
+    font-weight: var(--e-global-typography-primary-font-weight);
+  }
+  button,
+  .button {
+    font-family: var(--e-global-typography-accent-font-family);
+    font-weight: var(--e-global-typography-accent-font-weight);
+  }
+  blockquote,
+  .blockquote {
+    font-family: var(--e-global-typography-secondary-font-family);
+    font-weight: var(--e-global-typography-secondary-font-weight);
+  }
 }

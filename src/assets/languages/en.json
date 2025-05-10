@@ -1,0 +1,87 @@
+{
+  "navBar": {
+    "aboutUs": "About Us",
+    "customerRecommendations": "Customer Recommendations",
+    "questionsAndAnswers": "Questions and Answers",
+    "contactUs": "Contact Us",
+    "findUs": "Find Us",
+    "settings": "Settings",
+    "dark": "Dark",
+    "light": "Light",
+    "menu": "Menu"
+  },
+  "footer": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us and let's make something great together",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "linkedinTitle": "LinkedIn",
+    "copyright": "ORI ARBELI. All rights reserved."
+  },
+  "landing": {
+    "firstSection": {
+      "title": "Easily launch your online store",
+      "description": "Turn any idea into a live store – no tech skills, no headaches. Manage products, payments, and shipping in one simple, convenient place."
+    },
+    "about": {
+      "title": "who we are ?",
+      "p1": "We make the digital world accessible to businesses in Israel through custom websites that combine modern design with advanced functionality. We believe every business deserves an impressive digital presence.",
+      "p2": "Our professional team includes designers, developers, and digital marketing experts working closely with clients. We listen to unique needs and tailor solutions that connect with our clients' business vision.",
+      "p3": "Konimbo specializes in combining innovative technologies with user-friendly interfaces. Our websites are responsive across all devices, fast-loading, and provide excellent user experience, making us the preferred choice for our clients."
+    },
+    "recommendations": {
+      "title": "Customer Recommendations"
+    },
+    "questionsAnswers": {
+      "title": "Questions and Answers",
+      "subtitle": "We compiled these questions and answers for you",
+      "question1": "What are the advantages of building an online store with Konimbo?",
+      "answer1": "Konimbo provides an easy-to-use platform that allows you to quickly set up an online store without technical knowledge. Benefits include professional design templates, integration with Israeli payment systems, Hebrew language support, a user-friendly management interface, and local technical support. Additionally, Konimbo offers built-in SEO solutions and digital marketing tools that will help you increase traffic to your store and boost sales.",
+      "question2": "Can I integrate Konimbo with my existing inventory management system?",
+      "answer2": "Yes, Konimbo offers integration options with a variety of inventory management systems and popular ERP software in the Israeli market. Through our API interface, you can automatically synchronize inventory, orders, and prices between systems. We provide ready-made integration solutions for popular systems such as Priority, SAP Business One, Hashavshevet, and more, and our development team can help tailor a solution that fits your business's specific needs.",
+      "question3": "How long does it take to set up an online store with Konimbo?",
+      "answer3": "Setting up a basic store with Konimbo can be done within one to three days, depending on the number of products and the level of customization you desire. With our ready-made design templates, you can start selling quickly. For more complex stores with special customizations, the process may take one to two weeks. Our service team guides you through the process from start to finish and provides comprehensive training on the platform, allowing you to start selling as soon as possible.",
+      "question4": "How does Konimbo help me increase sales in my online store?",
+      "answer4": "Konimbo offers a variety of sales promotion and marketing tools. The platform includes a promotion and coupon management system, cross-selling and upselling capabilities, social media integration, and an email marketing system to maintain customer relationships. Additionally, Konimbo enables search engine optimization (SEO) with built-in tools and offers comprehensive reports and analytics to help you understand customer behavior and improve store performance. Our team of experts also provides personalized advice on how to maximize your store's sales potential."
+    },
+    "whatYouGet": {
+      "title": "We give you everything you need",
+      "item1": {
+        "title": "Proven Return on Investment",
+        "description": "Our website will transform into a business tool that generates revenue. With optimal conversion systems, advanced sales capabilities and smart data analysis, you'll see significant increases in sales and business growth."
+      },
+      "item2": {
+        "title": "Professional Support & Guidance",
+        "description": "Our team of experts guides you every step of the way. From setup to ongoing maintenance, we're available for any question, providing training and offering quick solutions to any challenge that arises."
+      },
+      "item3": {
+        "title": "Unique & Impressive Design",
+        "description": "We create a fully customized website design that reflects your brand. Your site will be unique, attractive and professional, with an intuitive user interface that drives customers to action."
+      },
+      "item4": {
+        "title": "Maximum Exposure",
+        "description": "Your website will receive professional promotion across all appropriate channels. We implement advanced SEO strategies, social media, and digital marketing to increase exposure and reach your relevant target audience."
+      }
+    }
+  },
+
+  "form": {
+    "title": "Contact Us",
+    "description": "Contact the Konimbo team to get more information or resolve questions about our products.",
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "firstNamePlaceholder": "Enter first name",
+    "lastNamePlaceholder": "Enter last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter email",
+    "phoneLabel": "Phone",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "send": "Send",
+    "close": "Close",
+    "success": "Message sent successfully",
+    "failed": "Message sending failed",
+    "cancel": "Cancel",
+    "sending": "Sending"
+  }
+}
