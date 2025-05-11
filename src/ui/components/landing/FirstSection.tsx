@@ -42,7 +42,7 @@ const FirstSection = () => {
                 },
               }}
             >
-              <motion.h1 className="text-4xl md:text-8xl font-bold mb-4">
+              <motion.h1 className="text-3xl md:text-8xl font-bold mb-4">
                 KONIMBO
               </motion.h1>
             </motion.div>
@@ -62,15 +62,15 @@ const FirstSection = () => {
                 },
               }}
             >
-              <motion.h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <motion.h2 className="text-lg md:text-5xl font-bold mb-4">
                 {t("landing.firstSection.title")}
               </motion.h2>
             </motion.div>
 
-            <Separator className="bg-slate-300 py-[2px] max-w-sm md:max-w-2xl w-fit mb-4" />
+            <Separator className="bg-slate-300 py-[2px] max-w-xs md:max-w-2xl w-fit mb-4" />
 
             <div>
-              <p className="text-xl md:text-2xl max-w-2xl">
+              <p className="text-md md:text-2xl max-w-2xl">
                 {t("landing.firstSection.description")}
               </p>
             </div>

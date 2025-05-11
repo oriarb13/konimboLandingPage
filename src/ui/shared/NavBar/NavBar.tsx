@@ -14,6 +14,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetDescription,
 } from "@/ui/shadCN/sheet";
 import { useMediaQuery } from "react-responsive";
 
@@ -107,6 +108,7 @@ const NavBar = ({ setIsFormOpen }: NavBarProps) => {
             <Setting />
             <SheetTitle>{t("navBar.menu")}</SheetTitle>
           </SheetHeader>
+          <SheetDescription></SheetDescription>
           <div className="flex flex-col space-y-4 mt-6">
             {menuItems.map((item) => (
               <Button

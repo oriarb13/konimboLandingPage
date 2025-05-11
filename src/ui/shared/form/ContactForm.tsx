@@ -7,7 +7,7 @@ import { Label } from "@/ui/shadCN/label";
 import { Textarea } from "@/ui/shadCN/textarea";
 import { PhoneInput } from "@/ui/shared/form/phone-input";
 import { cn } from "@/lib/utils";
-import DotsLoader from "@/assets/icons/DotsLoader";
+import DotsLoader from "@/ui/shared/loaders/DotsLoader";
 import AirtableService from "@/lib/airTable";
 
 const contactFormSchema = z.object({
