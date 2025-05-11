@@ -21,6 +21,7 @@ const menuItems: string[] = [
   "aboutUs",
   "customerRecommendations",
   "questionsAndAnswers",
+  "whatYouGet",
   "findUs",
 ];
 
@@ -30,7 +31,7 @@ interface NavBarProps {
 
 const NavBar = ({ setIsFormOpen }: NavBarProps) => {
   const { t } = useTranslation();
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" }) || false;
+  const isMobile = useMediaQuery({ query: "(max-width: 900px)" }) || false;
 
   const scrollToElement = (id: string) => {
     const element = document.getElementById(id);
@@ -55,9 +56,9 @@ const NavBar = ({ setIsFormOpen }: NavBarProps) => {
         className="cursor-pointer"
         onClick={() => scrollToElement("top")}
       />
-      <div className="flex items-center justify-around lg:w-1/2 md:w-1/2 w-full text-xl">
+      <div className="flex items-center justify-around  w-full xl:text-xl lg:text-lg text-sm mx-4">
         {menuItems.map((item, index) => (
-          <div key={item} className="flex items-center">
+          <div key={item} className="flex items-center gap-1">
             {index > 0 && (
               <div className="h-6 mx-1">
                 <Separator
@@ -67,7 +68,7 @@ const NavBar = ({ setIsFormOpen }: NavBarProps) => {
               </div>
             )}
             <div
-              className="px-2 cursor-pointer hover:text-foreground/80 font-bold"
+              className=" cursor-pointer hover:text-foreground/80 font-bold"
               onClick={() => scrollToElement(item)}
             >
               {t(`navBar.${item}`)}

@@ -1,9 +1,11 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import { Separator } from "@/ui/shadCN/separator";
+import { motion } from "framer-motion";
 
 const FirstSection = () => {
   const { t } = useTranslation();
+
   return (
     <div id="top" className="w-full relative">
       <div className="w-full relative">
@@ -18,17 +20,61 @@ const FirstSection = () => {
             maxHeight: "70vh",
           }}
         />
-        <div className="text-slate-300 absolute inset-0 bg-black/60 flex flex-col justify-center ">
-          <div className="rtl:mr-[10%] ltr:ml-[10%]">
-            <h1 className=" text-4xl md:text-8xl font-bold mb-4">KONIMBO</h1>
-            <h2 className=" text-3xl md:text-5xl font-bold mb-4">
-              {t("landing.firstSection.title")}
-            </h2>
+        <div className="text-slate-300 absolute inset-0 bg-black/60 flex flex-col justify-center">
+          <motion.div
+            className="rtl:mr-[10%] ltr:ml-[10%]"
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              variants={{
+                hidden: {
+                  y: 60,
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.9,
+                    duration: 0.9,
+                  },
+                },
+              }}
+            >
+              <motion.h1 className="text-4xl md:text-8xl font-bold mb-4">
+                KONIMBO
+              </motion.h1>
+            </motion.div>
+
+            <motion.div
+              variants={{
+                hidden: {
+                  y: 60,
+                  opacity: 0,
+                },
+                visible: {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.6,
+                  },
+                },
+              }}
+            >
+              <motion.h2 className="text-3xl md:text-5xl font-bold mb-4">
+                {t("landing.firstSection.title")}
+              </motion.h2>
+            </motion.div>
+
             <Separator className="bg-slate-300 py-[2px] max-w-sm md:max-w-2xl w-fit mb-4" />
-            <p className=" text-xl md:text-2xl max-w-2xl">
-              {t("landing.firstSection.description")}
-            </p>
-          </div>
+
+            <div>
+              <p className="text-xl md:text-2xl max-w-2xl">
+                {t("landing.firstSection.description")}
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ const WhatYouGet = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="py-12 relative min-h-screen">
+    <div id="whatYouGet" className="py-12 relative min-h-screen">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={getBg}
