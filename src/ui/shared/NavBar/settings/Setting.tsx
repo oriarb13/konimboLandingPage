@@ -18,12 +18,6 @@ const Setting = () => {
   const { t } = useTranslation();
   const dropdownRef = useRef(null);
 
-  // const handleCloseDropdown = () => {
-  //   if (dropdownRef.current) {
-  //     dropdownRef.current.click();
-  //   }
-  // };
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
