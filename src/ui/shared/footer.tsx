@@ -18,8 +18,8 @@ const Footer = () => {
         <Image
           src={footerBg}
           alt="footer-bg"
-          layout="fill"
-          objectFit="cover"
+          fill={true}
+          style={{ objectFit: "cover" }}
           className="opacity-30"
         />
       </div>
