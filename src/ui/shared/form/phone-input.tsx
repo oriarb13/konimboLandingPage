@@ -51,7 +51,10 @@ const PhoneInput: React.ForwardRefExoticComponent<PhoneInputProps> =
       return (
         <RPNInput.default
           ref={ref}
-          className={cn("flex items-center rtl:flex-row-reverse", className)}
+          className={cn(
+            "flex items-center rtl:flex-row-reverse rounded-2xl",
+            className
+          )}
           flagComponent={FlagComponent}
           countrySelectComponent={CountrySelect}
           inputComponent={InputComponent}
@@ -99,7 +102,7 @@ const InputComponent = React.forwardRef<
   <Input
     maxLength={16}
     className={cn(
-      "rounded-e-lg rounded-s-none lg:h-8 2xl:h-8 border border-gray-400 border-l-0",
+      "rounded-e-lg rounded-s-none h-8 border border-gray-400 border-l-0",
       className
     )}
     {...props}
@@ -128,7 +131,7 @@ const CountrySelect = ({
       <PopoverTrigger asChild>
         <Button
           type="button"
-          className="xs:py-1 lg:py-0 flex gap-1 rounded-e-none rounded-s-lg rtl:rounded-s-none rtl:rounded-e-lg border-gray-400 bg- px-3 focus:z-10  border "
+          className="flex gap-1 rounded-e-none rounded-s-lg bg-foreground/10 rtl:rounded-s-none rtl:rounded-e-lg border-gray-400 px-3 focus:z-10 border h-8 items-center"
           disabled={disabled}
         >
           <FlagComponent
@@ -204,7 +207,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className="flex w-6 overflow-hidden rounded-sm bg-foreground/20">
+    <span className="flex items-center justify-center w-6 overflow-hidden rounded-sm bg-foreground/20">
       {Flag && <Flag title={countryName} />}
     </span>
   );
