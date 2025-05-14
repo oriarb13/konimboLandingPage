@@ -7,8 +7,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--font-roboto-mono);
   --font-primary: var(--font-primary);
   --font-secondary: var(--font-secondary);
 
@@ -70,7 +70,7 @@
 
   --e-global-typography-primary-font-family: "Roboto";
   --e-global-typography-primary-font-weight: 600;
-  --e-global-typography-secondary-font-family: "Roboto Slab";
+  --e-global-typography-secondary-font-family: "Roboto";
   --e-global-typography-secondary-font-weight: 400;
   --e-global-typography-text-font-family: "Roboto";
   --e-global-typography-text-font-weight: 400;

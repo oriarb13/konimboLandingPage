@@ -1,6 +1,6 @@
 "use client";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import NavBar from "@/ui/shared/NavBar/NavBar";
@@ -10,6 +10,7 @@ import logo2 from "@/assets/images/logo2.png";
 import { useState, useEffect } from "react";
 import Form from "@/ui/shared/form/ContactForm";
 import Loader from "@/ui/shared/loaders/Loader";
+
 const GlobalHydrationWrapper = ({
   children,
 }: {
@@ -26,7 +27,7 @@ const GlobalHydrationWrapper = ({
 
   if (!isHydrated) {
     return (
-      <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-background dark:bg-foreground/10 flex items-center justify-center z-50">
         <Loader />
       </div>
     );
@@ -35,14 +36,18 @@ const GlobalHydrationWrapper = ({
   return <>{children}</>;
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700"],
+  display: "swap",
 });
 
 const siteMetadata = {
@@ -73,9 +78,7 @@ export default function RootLayout({
         <link rel="icon" href={logo2.src} type="image/png" />
         <link rel="apple-touch-icon" href={logo2.src} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${roboto.variable} ${robotoMono.variable} antialiased`}>
         <I18nProvider>
           <ThemeProvider
             attribute="class"
